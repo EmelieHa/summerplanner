@@ -1,6 +1,6 @@
 import { React, useState } from 'react'
 import './App.css'
-import beach from './beach.jpg'
+import beach from './beach.jpg';
 
 function Header () {
   return (
@@ -74,9 +74,27 @@ function Display ({ list }) {
 }
 
 function Notes () {
+  function saveText() {
+if (document.querySelector('textarea').value === '') {
+  alert('Anteckningar är obligatoriskt!')
+} else {
+const savedText = document.querySelector('textarea').value;
+  }
+}
+ function handleClick() {
+  if (document.getElementById('edit').textContent === 'Klart!') {
+    saveText();
+  } else {
+const textarea = document.createElement('textarea');
+textarea.setAttribute('class', 'area');
+document.querySelector('.text').append(textarea);
+document.getElementById('edit').textContent = 'Klart!';
+  }
+  }
   return (
     <div className='notes'>
-<p id='edit'>Redigera</p>
+<p id='edit' onClick={handleClick}>Redigera</p>
+<div className='text'></div>
     </div>
   )
 }

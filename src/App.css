@@ -63,6 +63,13 @@ span {
   text-decoration: underline;
 }
 
+.area {
+  height: 70px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  background-color: whitesmoke;
+}
+
 #edit:hover {
   cursor: pointer;
   color: turquoise
