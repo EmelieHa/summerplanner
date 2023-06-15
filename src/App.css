@@ -55,3 +55,20 @@ span {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-style: italic;
 }
+
+#edit {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 18px;
+  color: darkgrey;
+  text-decoration: underline;
+}
+
+#edit:hover {
+  cursor: pointer;
+  color: turquoise
+}
+
+img {
+  float: right;
+  border-radius: 25%;
+}
