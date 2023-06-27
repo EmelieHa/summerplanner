@@ -68,6 +68,7 @@ span {
   font-family: 'Courier New', Courier, monospace;
   font-size: 18px;
   background-color: whitesmoke;
+  visibility: 'hidden';
 }
 
 #edit:hover {

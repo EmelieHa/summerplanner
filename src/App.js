@@ -75,28 +75,34 @@ function Display ({ list }) {
 
 function Notes ({title}) {
 const [savedText, setSavedText] = useState([]);
+const [textValue, setTextValue] = useState('');
+
+const handleChange = (event) => {
+
+}
 
   function saveText() {
 if (document.querySelector('textarea').value === '') {
   alert('Anteckningar är obligatoriskt!')
 } else {
-setSavedText([...savedText, `${title}: ${document.querySelector('textarea').value}`]);
+setSavedText([...savedText, title]);
+
   }
 }
  function handleClick() {
   if (document.getElementById('edit').textContent === 'Klart!') {
     saveText();
   } else {
-const textarea = document.createElement('textarea');
-textarea.setAttribute('class', 'area');
-document.querySelector('.text').append(textarea);
+document.querySelector('textarea').style.visibility = 'visible';
 document.getElementById('edit').textContent = 'Klart!';
   }
   }
   return (
     <div className='notes'>
 <p id='edit' onClick={handleClick}>Redigera</p>
-<div className='text'></div>
+<div className='text'>
+<textarea className='area' onChange={handleChange}></textarea>
+</div>
     </div>
   )
 }
