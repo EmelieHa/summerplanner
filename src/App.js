@@ -61,7 +61,7 @@ function Display ({ list }) {
       <li>
         {el.month}: <span>{el.plan}</span>
         <br />
-        <Notes />
+        <Notes title={el.plan}/>
       </li>
     )
   })
@@ -73,12 +73,14 @@ function Display ({ list }) {
   )
 }
 
-function Notes () {
+function Notes ({title}) {
+const [savedText, setSavedText] = useState([]);
+
   function saveText() {
 if (document.querySelector('textarea').value === '') {
   alert('Anteckningar är obligatoriskt!')
 } else {
-const savedText = document.querySelector('textarea').value;
+setSavedText([...savedText, `${title}: ${document.querySelector('textarea').value}`]);
   }
 }
  function handleClick() {
