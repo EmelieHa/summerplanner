@@ -78,22 +78,21 @@ const [savedText, setSavedText] = useState([]);
 const [textValue, setTextValue] = useState('');
 
 const handleChange = (event) => {
-
+setTextValue(event.target.value)
 }
 
   function saveText() {
 if (document.querySelector('textarea').value === '') {
   alert('Anteckningar är obligatoriskt!')
 } else {
-setSavedText([...savedText, title]);
-
+setSavedText([...savedText, textValue])
   }
 }
  function handleClick() {
   if (document.getElementById('edit').textContent === 'Klart!') {
     saveText();
   } else {
-document.querySelector('textarea').style.visibility = 'visible';
+document.querySelector('.area').style.visibility = 'visible';
 document.getElementById('edit').textContent = 'Klart!';
   }
   }
