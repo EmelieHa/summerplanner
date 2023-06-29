@@ -1,6 +1,6 @@
 import { React, useState } from 'react'
 import './App.css'
-import beach from './beach.jpg';
+import beach from './beach.jpg'
 
 function Header () {
   return (
@@ -61,7 +61,7 @@ function Display ({ list }) {
       <li>
         {el.month}: <span>{el.plan}</span>
         <br />
-        <Notes title={el.plan}/>
+        <Notes title={el.plan} />
       </li>
     )
   })
@@ -73,35 +73,29 @@ function Display ({ list }) {
   )
 }
 
-function Notes ({title}) {
-const [savedText, setSavedText] = useState([]);
-const [textValue, setTextValue] = useState('');
+function Notes ({ title }) {
+  const [savedText, setSavedText] = useState([])
+  const [textValue, setTextValue] = useState('')
 
-const handleChange = (event) => {
-setTextValue(event.target.value)
-}
+  const handleChange = event => {
+    setTextValue(event.target.value)
+  }
 
-  function saveText() {
-if (document.querySelector('textarea').value === '') {
-  alert('Anteckningar är obligatoriskt!')
-} else {
-setSavedText([...savedText, textValue])
-  }
-}
- function handleClick() {
-  if (document.getElementById('edit').textContent === 'Klart!') {
-    saveText();
-  } else {
-document.querySelector('.area').style.visibility = 'visible';
-document.getElementById('edit').textContent = 'Klart!';
-  }
+  function handleClick () {
+    if (document.querySelector('textarea').value === '') {
+      alert('Anteckningar är obligatoriskt!')
+    } else {
+      setSavedText([...savedText, textValue])
+    }
   }
   return (
     <div className='notes'>
-<p id='edit' onClick={handleClick}>Redigera</p>
-<div className='text'>
-<textarea className='area' onChange={handleChange}></textarea>
-</div>
+      <p id='edit' onClick={handleClick}>
+        Spara
+      </p>
+      <div className='text'>
+        <textarea className='area' onChange={handleChange}></textarea>
+      </div>
     </div>
   )
 }
