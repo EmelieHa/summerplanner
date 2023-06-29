@@ -76,6 +76,7 @@ function Display ({ list }) {
 function Notes ({ title }) {
   const [savedText, setSavedText] = useState([])
   const [textValue, setTextValue] = useState('')
+  const [visible, setVisible] = useState(true)
 
   const handleChange = event => {
     setTextValue(event.target.value)
@@ -85,16 +86,20 @@ function Notes ({ title }) {
     if (document.querySelector('textarea').value === '') {
       alert('Anteckningar är obligatoriskt!')
     } else {
-      setSavedText([...savedText, textValue])
+      setSavedText([...savedText, textValue]);
+      setVisible((prev) => !prev);
     }
   }
   return (
-    <div className='notes'>
+    <div className='notes'> {visible && (
       <p id='edit' onClick={handleClick}>
         Spara
       </p>
-      <div className='text'>
-        <textarea className='area' onChange={handleChange}></textarea>
+    )}
+      <div className='text'><h5>{savedText}</h5>
+      {visible && (
+        <textarea placeholder="Lägg till anteckningar..." className='area' onChange={handleChange}></textarea>
+        )}
       </div>
     </div>
   )
