@@ -86,19 +86,26 @@ function Notes ({ title }) {
     if (document.querySelector('textarea').value === '') {
       alert('Anteckningar är obligatoriskt!')
     } else {
-      setSavedText([...savedText, textValue]);
-      setVisible((prev) => !prev);
+      setSavedText([...savedText, textValue])
+      setVisible(prev => !prev)
     }
   }
   return (
-    <div className='notes'> {visible && (
-      <p id='edit' onClick={handleClick}>
-        Spara
-      </p>
-    )}
-      <div className='text'><h5>{savedText}</h5>
+    <div className='notes'>
+      {' '}
       {visible && (
-        <textarea placeholder="Lägg till anteckningar..." className='area' onChange={handleChange}></textarea>
+        <p id='edit' onClick={handleClick}>
+          Spara
+        </p>
+      )}
+      <div className='text'>
+        <h5>{savedText}</h5>
+        {visible && (
+          <textarea
+            placeholder='Lägg till anteckningar...'
+            className='area'
+            onChange={handleChange}
+          ></textarea>
         )}
       </div>
     </div>
