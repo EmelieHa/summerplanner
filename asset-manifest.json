@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/summerplanner/static/css/main.3bdbeff4.css",
+    "main.js": "/summerplanner/static/js/main.d725ac0a.js",
+    "static/js/787.4804d45f.chunk.js": "/summerplanner/static/js/787.4804d45f.chunk.js",
+    "static/media/beach.jpg": "/summerplanner/static/media/beach.aff641713f38224fad7d.jpg",
+    "index.html": "/summerplanner/index.html",
+    "main.3bdbeff4.css.map": "/summerplanner/static/css/main.3bdbeff4.css.map",
+    "main.d725ac0a.js.map": "/summerplanner/static/js/main.d725ac0a.js.map",
+    "787.4804d45f.chunk.js.map": "/summerplanner/static/js/787.4804d45f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3bdbeff4.css",
+    "static/js/main.d725ac0a.js"
+  ]
+}
